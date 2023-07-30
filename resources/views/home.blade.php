@@ -23,6 +23,22 @@
             {{-- cicliamo i dati del db tramite un ciclo foreach e stampiamo a video --}}
             @foreach ($trains as $train)
                 <h2>{{$train->azienda}}</h2>
+
+                <h5>{{$train->stazione_di_partenza}} - {{$train->stazione_di_arrivo}}</h5>
+                {{-- <h6>Data di partenza: {{$train->data_di_partenza}}</h6> --}}
+                <h6>Orario di partenza: {{$train->orario_di_partenza}}</h6>
+                <h6>Orario di arrivo: {{$train->orario_di_arrivo}}</h6>
+                <h6>Carrozza n°: {{$train->numero_carrozze}}</h6>
+                <h6>@if ($train->in_orario) in orario:
+                    si
+                
+                @else
+                    no
+                    
+                @endif</h6>
+                
+                
+
                 
             @endforeach
         </div>
